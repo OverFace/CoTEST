@@ -1,0 +1,28 @@
+Git Bash / 사용 및 add / Commit / Rebase 작업
+
+기본 사용
+cd : 폴더를 들어가거나 나오거나 할때 사용. 
+     cd 폴더명 -> 폴더 안으로 들어감. cd .. 하면 뒤로 나감
+ls : 폴더 안에 있는 파일 리스트 목록을 보여줌
+touch : 파일을 생성하는 명령어 ex) touch test.txt 이런식으로 생성함.
+
+git을 사용하기 위해서는 github 홈페이지에서 내가 하고자 하는 프로젝트를 Foke 해온다. Foke해온 프로젝트를
+내 깁헙 프로필 파일에서 확인 할 수 있다. 그리고 그 프로젝트를 (git Clone 복사한 주소) 를 통해
+프로젝트를 내가 원하는 폴더에 생성한다.
+
+이제 프로젝트가 생성이 되고 나의 로컬과 github에는 프로젝트각 각각 있다.
+이제 나는 브런치를 Develop로 바꾸어서 거기다가 작업을 하고 master는 배포용으로만 사용을 한다.
+
+작업을 하다 추가가 되면
+git add 로 파일들을 추가하고 git commit -m"커밋 메세지" 로 커밋을 한다음
+git push origin 브런치명 을 해주면 내꺼의 깃헙에 올라가진다. 이거 자체를 Request 시키면 이제 다른 사람들도
+끌어 올수 있게 된다 나의 Commit 정보를
+
+!!! 중요한 것 ReBase
+내가 만든 것과 상대방이 만든 것이 있고 버전은 같으나 내용이 다를때 Rebase 를 사용해준다.
+Rebase 사용전에는 Upstream을 설정해 준다. Origin의 부모를 설정해 주는 것으로 
+-> git remote add - track 브런치명 upstream "포크한 프로젝트 주소" 식으로 추가해 주며
+-> git fetch upstream을 해준다음
+-> git rebase upstream / 브런치명 을 하게 되면 Rebase가 된다.
+
+그다음 Push Origin으로 나의 원본을 다시 업데이트 시켜주고 리퀘스트를 한다. 
